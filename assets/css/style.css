@@ -1,0 +1,339 @@
+:root {
+    --text-color-1: #333E63;
+    --text-color-2: #8498B4;
+    --text-color-3: #A5AAB7;
+    --font-size-lg: 1.185rem;
+    --font-size-md: 0.922rem;
+    --font-size-sm: 0.79rem;
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    scroll-behavior: smooth;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    line-height: 1.5;
+    font-style: normal;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+button {
+    border: none;
+    outline: none;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+input[type='date'], input[type='time'] {
+    flex-direction: row-reverse;
+    gap: 0.5rem;
+}
+input[type='date']::-webkit-calendar-picker-indicator {
+    background: url("../images/calendar.svg") no-repeat;
+    background-size: contain;
+}
+
+input[type='time']::-webkit-calendar-picker-indicator {
+    background: url("../images/clock.svg") no-repeat;
+    background-size: contain;
+}
+
+.container {
+    max-width: 552px;
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#mainHeader {
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+    background: #333677;
+    /* background: #656CEE; */
+    color: white;
+}
+#mainHeader .container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#mainHeader .navbar-toggler-btn, #mainHeader .avatar-wrapper {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 0.5rem;
+    -webkit-border-radius: 0.5rem;
+    -moz-border-radius: 0.5rem;
+    -ms-border-radius: 0.5rem;
+    -o-border-radius: 0.5rem;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#mainHeader .navbar-toggler-btn {
+    flex-direction: column;
+    gap: 2px;
+    background: #ffffff;
+}
+
+#mainHeader .navbar-toggler-btn .bar {
+    height: 2.81px;
+    width: 12.64px;
+    background: #656CEE;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+}
+
+#mainHeader .avatar-wrapper {
+    background: #EAF2FF;
+}
+#checkoutSection {
+    background: #ffffff;
+    color: #333333;
+    border-top-right-radius: 2rem;
+    border-top-left-radius: 2rem;
+    margin-top: -2rem;
+}
+
+#checkoutSection header {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1rem;
+    padding-bottom: 1.5rem;
+    align-items: start;
+}
+
+#checkoutSection header h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #333E63;
+}
+
+#checkoutSection header p {
+    font-weight: 500;
+    color: #A5AAB7;
+}
+
+#checkoutSection .header-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#checkoutSection .header-inner-actions {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    font-size: var(--font-size-sm);
+    color: var(--font-size-sm);
+}
+
+#checkoutSection .header-inner-action {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+#checkoutSection .header-inner-action-icon-wrapper {
+    width: 1.75rem;
+    height: 1.75rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(72.92% 72.92% at 100% 12.5%, #969BFF 0%, #656CEE 100%);
+    border: 1px solid #f2f2f2;
+    border-radius: 0.25rem;
+    -webkit-border-radius: 0.25rem;
+    -moz-border-radius: 0.25rem;
+    -ms-border-radius: 0.25rem;
+    -o-border-radius: 0.25rem;
+}
+
+#carSpot {
+    height: 1.75rem;
+    border: 1px solid #EFEFEF;
+    border-radius: 0.25rem;
+    -webkit-border-radius: 0.25rem;
+    -moz-border-radius: 0.25rem;
+    -ms-border-radius: 0.25rem;
+    -o-border-radius: 0.25rem;
+    padding-left: 0.5rem;
+    /* padding-right: 0.5rem; */
+}
+
+#checkoutSection .close-btn {
+    height: 2rem;
+    width: 2rem;
+    background: #EAF2FF;
+    color: #656CEE;
+    font-size: 1.5rem;
+    border-radius: 0.5rem;
+    -webkit-border-radius: 0.5rem;
+    -moz-border-radius: 0.5rem;
+    -ms-border-radius: 0.5rem;
+    -o-border-radius: 0.5rem;
+}
+
+#checkoutSection .actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #F4F4F4;
+    margin-bottom: 1rem;
+}
+#checkoutSection .action {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    height: 100%;
+    padding: 1.5rem;
+    font-size: var(--font-size-sm);
+    font-weight: 700;
+    color: var(--text-color-3);
+}
+#checkoutSection .action:nth-of-type(even) {
+    border-left: 0.5px solid #E8E8E8;
+    border-right: 0.5px solid #E8E8E8;
+}
+
+#checkoutSection .action .icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--text-color-3);
+    color: #ffffff;
+    height: 1.25rem;
+    width: 1.25rem;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+#parkinglotOrderForm {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.form-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+.form-control, .custom-select-wrapper {
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+    border: 1px solid #EFEFEF;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    height: 3rem;
+    color: #9695A8;
+    width: 100%;
+}
+.form-control:hover, .form-control:focus, .form-control:active {
+    border-width: 1px;
+    border-style: solid;
+    border-color: linear-gradient(104.47deg, rgba(112, 119, 242, 0.76) 0%, rgba(148, 154, 255, 0.76) 100%);
+    color: #3277D8;
+}
+.form-label {
+    display: block;
+    margin-bottom: 0.75rem;
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    color: #203D65;
+}
+.parking-time-form-row{
+    justify-content: start;
+}
+.parking-date-form-group {
+    flex-basis: 40%;
+}
+.park-start-form-group, .park-end-form-group {
+    flex-basis: 30%;
+}
+.custom-select-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    font-size: var(--font-size-sm);
+}
+.custom-select-wrapper .price {
+    font-size: var(--font-size-lg);
+    font-weight: 300;
+}
+.custom-select {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: max-content;
+}
+
+.horizontal-scroll {
+    overflow-x: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding-left: 5px;
+}
+.horizontal-scroll::-webkit-scrollbar{
+    display: none;
+}
+
+#parkinglotOrderForm footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    background: #F3F4FF;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.submit-btn {
+    padding: 0.5rem 1.25rem;
+    background: radial-gradient(100% 100% at 50% 0%, #FFBA82 0%, #FF8B2D 100%);
+    color: #ffffff;
+    border-radius: 0.25rem;
+    -webkit-border-radius: 0.25rem;
+    -moz-border-radius: 0.25rem;
+    -ms-border-radius: 0.25rem;
+    -o-border-radius: 0.25rem;
+    font-size: var(--font-size-md);
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.submit-btn span {
+    font-weight: 700;
+    font-size: var(--font-size-lg);
+}
+
+.scanner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
