@@ -365,6 +365,7 @@ input[type='time']:active::-webkit-calendar-picker-indicator {
     justify-content: center;
     align-items: center;
     gap: 0.5rem;
+    font-size: var(--font-size-md);
 }
 
 @media screen and (max-width: 378.98px) {
