@@ -27,7 +27,7 @@ img {
     height: auto;
 }
 
-button {
+button, a[type='button'] {
     border: none;
     outline: none;
     display: inline-flex;
@@ -35,6 +35,12 @@ button {
     align-items: center;
     gap: 0.5rem;
 }
+
+input, textarea {
+    outline: none;
+    border: none;
+}
+
 input[type='date'], input[type='time'] {
     flex-direction: row-reverse;
     gap: 0.5rem;
@@ -48,7 +54,6 @@ input[type='time']::-webkit-calendar-picker-indicator {
     background: url("../images/clock.svg") no-repeat;
     background-size: contain;
 }
-
 .container {
     max-width: 552px;
     width: 100%;
@@ -69,8 +74,12 @@ input[type='time']::-webkit-calendar-picker-indicator {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 0.5rem;
 }
 
+#mainHeader h1 {
+    font-size: 1.25rem;
+}
 #mainHeader .navbar-toggler-btn, #mainHeader .avatar-wrapper {
     width: 2rem;
     height: 2rem;
@@ -252,21 +261,27 @@ input[type='time']::-webkit-calendar-picker-indicator {
     color: #9695A8;
     width: 100%;
 }
-.form-control:hover, .form-control:focus, .form-control:active {
-    border-width: 1px;
-    border-style: solid;
-    border-color: linear-gradient(104.47deg, rgba(112, 119, 242, 0.76) 0%, rgba(148, 154, 255, 0.76) 100%);
+
+.form-control:hover,
+.form-control:focus,
+.form-control:active,
+.custom-select-wrapper:hover {
     color: #3277D8;
+    border: 1px solid #3277D8;
 }
+
+.form-control:focus, 
+.form-control:active, 
+.custom-select-wrapper:has(input[type='checkbox']:checked) {
+    box-shadow: 0px 1px 3px 0px #3277D8;
+}
+
 .form-label {
     display: block;
     margin-bottom: 0.75rem;
     font-size: var(--font-size-sm);
     font-weight: 500;
     color: #203D65;
-}
-.parking-time-form-row{
-    justify-content: start;
 }
 .parking-date-form-group {
     flex-basis: 40%;
@@ -293,10 +308,11 @@ input[type='time']::-webkit-calendar-picker-indicator {
 }
 
 .horizontal-scroll {
-    overflow-x: scroll;
+    padding: 2px 5px;
+    overflow-x: auto;
+    overflow-y: hidden;
     scrollbar-width: none;
     -ms-overflow-style: none;
-    padding-left: 5px;
 }
 .horizontal-scroll::-webkit-scrollbar{
     display: none;
@@ -336,4 +352,16 @@ input[type='time']::-webkit-calendar-picker-indicator {
     justify-content: center;
     align-items: center;
     gap: 0.5rem;
+}
+
+@media screen and (max-width: 378.98px) {
+    .parking-time-form-row {
+        flex-wrap: wrap;
+    }
+    .parking-date-form-group {
+        flex-basis: 100%;
+    }
+    .park-start-form-group, .park-end-form-group {
+        flex-basis: 48%;
+    }
 }
