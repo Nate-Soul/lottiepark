@@ -54,6 +54,19 @@ input[type='time']::-webkit-calendar-picker-indicator {
     background: url("../images/clock.svg") no-repeat;
     background-size: contain;
 }
+
+input[type='date']:focus::-webkit-calendar-picker-indicator,
+input[type='date']:active::-webkit-calendar-picker-indicator {
+    background: url("../images/calendar-active.svg") no-repeat;
+    background-size: contain;
+}
+
+input[type='time']:focus::-webkit-calendar-picker-indicator,
+input[type='time']:active::-webkit-calendar-picker-indicator {
+    background: url("../images/clock-active.svg") no-repeat;
+    background-size: contain;
+}
+
 .container {
     max-width: 552px;
     width: 100%;
