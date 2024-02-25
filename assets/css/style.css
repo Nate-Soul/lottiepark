@@ -41,10 +41,12 @@ input, textarea {
     border: none;
 }
 
-input[type='date'], input[type='time'] {
-    flex-direction: row-reverse;
+/* input[type='date'], input[type='time'] {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     gap: 0.5rem;
-}
+} */
 input[type='date']::-webkit-calendar-picker-indicator {
     background: url("../images/calendar.svg") no-repeat;
     background-size: contain;
@@ -68,7 +70,7 @@ input[type='time']:active::-webkit-calendar-picker-indicator {
 }
 
 .container {
-    max-width: 552px;
+    max-width: 640px;
     width: 100%;
     padding-left: 1rem;
     padding-right: 1rem;
@@ -132,14 +134,16 @@ input[type='time']:active::-webkit-calendar-picker-indicator {
     border-top-right-radius: 2rem;
     border-top-left-radius: 2rem;
     margin-top: -2rem;
+    position: relative;
+    padding-bottom: 4rem;
 }
 
 #checkoutSection header {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: 1rem;
     padding-top: 1rem;
     padding-bottom: 1.5rem;
-    align-items: start;
 }
 
 #checkoutSection header h2 {
@@ -153,16 +157,10 @@ input[type='time']:active::-webkit-calendar-picker-indicator {
     color: #A5AAB7;
 }
 
-#checkoutSection .header-inner {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
 #checkoutSection .header-inner-actions {
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: 1.5rem;
     font-size: var(--font-size-sm);
     color: var(--font-size-sm);
 }
@@ -200,7 +198,7 @@ input[type='time']:active::-webkit-calendar-picker-indicator {
     /* padding-right: 0.5rem; */
 }
 
-#checkoutSection .close-btn {
+/* #checkoutSection .close-btn {
     height: 2rem;
     width: 2rem;
     background: #EAF2FF;
@@ -211,7 +209,7 @@ input[type='time']:active::-webkit-calendar-picker-indicator {
     -moz-border-radius: 0.5rem;
     -ms-border-radius: 0.5rem;
     -o-border-radius: 0.5rem;
-}
+} */
 
 #checkoutSection .actions {
     display: flex;
@@ -220,6 +218,14 @@ input[type='time']:active::-webkit-calendar-picker-indicator {
     background: #F4F4F4;
     margin-bottom: 1rem;
 }
+
+/* #checkoutSection .actions, #parkinglotOrderForm footer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+} */
+
 #checkoutSection .action {
     display: flex;
     align-items: center;
@@ -296,11 +302,21 @@ input[type='time']:active::-webkit-calendar-picker-indicator {
     font-weight: 500;
     color: #203D65;
 }
-.parking-date-form-group {
-    flex-basis: 40%;
+
+.parking-time-form-row {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-gap: 0.75rem;
 }
-.park-start-form-group, .park-end-form-group {
-    flex-basis: 30%;
+
+.parking-date-form-group {
+    grid-column: span 1 / span 1;
+}
+.park-start-form-group {
+    grid-column: span 1 / span 1;
+}
+.park-end-form-group {
+   grid-column: span 1 / span 1;
 }
 .custom-select-wrapper{
     display: flex;
@@ -337,8 +353,7 @@ input[type='time']:active::-webkit-calendar-picker-indicator {
     justify-content: center;
     gap: 2rem;
     background: #F3F4FF;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding: 2rem 0.5rem;
 }
 
 .submit-btn {
@@ -368,14 +383,65 @@ input[type='time']:active::-webkit-calendar-picker-indicator {
     font-size: var(--font-size-md);
 }
 
+/* @media screen and (max-width: 640px) {
+
+    input[type="date"]::before {
+        color: #203D65;
+        content: attr(placeholder);
+        margin-right: 3px;
+    }
+
+    input[type="date"]:focus::before{
+        content: attr(placeholder) !important;
+    }
+
+    input[type="date"].has-value:focus::before{
+        content: none !important;
+    }
+    input[type="date"].has-value::before{
+        content: none !important;
+    }
+
+    input[type="date"] {
+        display: flex;
+    }
+    
+} */
+
 @media screen and (max-width: 378.98px) {
+    
+    #checkoutSection .actions {
+        flex-direction: column;
+        justify-content: center;
+    }
+    #checkoutSection .action:nth-of-type(even) {
+        border-left: none;
+        border-right: none;
+        border-top: 0.5px solid #E8E8E8;
+        border-bottom: 0.5px solid #E8E8E8;
+    }
     .parking-time-form-row {
-        flex-wrap: wrap;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
     .parking-date-form-group {
-        flex-basis: 100%;
+        grid-column: span 2 / span 2;
+    }
+    #parkinglotOrderForm footer {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .submit-btn {
+        width: 100%;
+    }
+}
+
+
+@media screen and (max-width: 320px) {
+    #checkoutSection .header-inner-actions {
+        flex-direction: column;
+        align-items: start;
     }
     .park-start-form-group, .park-end-form-group {
-        flex-basis: 48%;
+        grid-column: span 2 / span 2;
     }
 }
