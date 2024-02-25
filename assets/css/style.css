@@ -45,13 +45,13 @@ input, textarea {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-direction: row-reverse;
     gap: 0.5rem;
 } */
 input[type='date']::-webkit-calendar-picker-indicator {
     background: url("../images/calendar.svg") no-repeat;
     background-size: contain;
 }
-
 input[type='time']::-webkit-calendar-picker-indicator {
     background: url("../images/clock.svg") no-repeat;
     background-size: contain;
@@ -195,6 +195,7 @@ input[type='time']:active::-webkit-calendar-picker-indicator {
     -ms-border-radius: 0.25rem;
     -o-border-radius: 0.25rem;
     padding-left: 0.5rem;
+    outline: none;
     /* padding-right: 0.5rem; */
 }
 
@@ -284,14 +285,18 @@ input[type='time']:active::-webkit-calendar-picker-indicator {
 .form-control:hover,
 .form-control:focus,
 .form-control:active,
-.custom-select-wrapper:hover {
+.custom-select-wrapper:hover,
+#carSpot:hover, #carSpot:focus {
     color: #3277D8;
     border: 1px solid #3277D8;
 }
 
 .form-control:focus, 
 .form-control:active, 
-.custom-select-wrapper:has(input[type='checkbox']:checked) {
+.custom-select-wrapper:has(input[type='checkbox']:checked),
+#carSpot:focus {
+    -webkit-box-shadow: 0px 1px 3px 0px #3277D8;
+    -moz-box-shadow: 0px 1px 3px 0px #3277D8;
     box-shadow: 0px 1px 3px 0px #3277D8;
 }
 

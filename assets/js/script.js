@@ -7,5 +7,29 @@ dateInputs.forEach(dateInput => {
         } else {
             dateInput.classList.remove("has-value");
         }
-    })
+    });
+});
+
+const estimatedDurationCbs = document.getElementsByName("estimated_duration");
+
+estimatedDurationCbs.forEach(estimatedDurationCb => {
+    estimatedDurationCb.addEventListener("change", () => {
+        estimatedDurationCbs.forEach(checkbox => {
+            if (estimatedDurationCb !== checkbox){
+                checkbox.checked = false;
+            }
+        });
+    });
+});
+
+const serviceCbs = document.getElementsByName("additional_services");
+
+serviceCbs.forEach(serviceCb => {
+    serviceCb.addEventListener("change", () => {
+        serviceCbs.forEach(checkbox => {
+            if (serviceCb !== checkbox){
+                checkbox.checked = false;
+            }
+        });
+    });
 });
