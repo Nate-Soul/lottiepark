@@ -90,18 +90,27 @@
                     <div class="form-row parking-time-form-row">
                         <div class="form-group parking-date-form-group">
                             <label for="parkingDate" class="form-label">Date</label>
-                            <input type="date" name="parking_date" id="parkingDate" class="form-control">
+                            <div class="park-input-container form-control">
+                                <img src="./assets/images/calendar.svg" width="16" height="16" alt="">
+                                <input type="date" name="parking_date" id="parkingDate">
+                            </div>
                         </div>
                         <div class="form-group park-start-form-group">
                             <label for="parkStart" class="form-label">Time In</label>
-                            <input type="time" name="park_start" id="parkStart" class="form-control">
+                            <div class="park-input-container form-control">
+                                <img src="./assets/images/clock.svg" width="16" height="16" alt="">
+                                <input type="time" name="park_start" id="parkStart">
+                            </div>
                         </div>
                         <div class="form-group park-end-form-group">
                             <label for="parkEnd" class="form-label">Time Out</label>
-                            <input type="time" name="park_end" id="parkEnd" class="form-control">
+                            <div class="park-input-container form-control">
+                                <img src="./assets/images/clock.svg" width="16" height="16" alt="">
+                                <input type="time" name="park_end" id="parkEnd">
+                            </div>
                         </div>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group estimated-duration-form-group">
                         <label class="form-label">What&apos;s Your Estimated Duration?</label>
                         <div class="horizontal-scroll">
                             <div class="form-row estimated-duration-form-row">
@@ -143,10 +152,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group additional-services-form-group">
                         <label class="form-label">Services</label>
                         <div class="horizontal-scroll">
-                            <div class="form-row">
+                            <div class="form-row additional-services-form-row">
                                 <div class="custom-select-wrapper">
                                     <label class="custom-select">
                                         <input type="checkbox" name="additional_services" id="additionalServices1" value="40">

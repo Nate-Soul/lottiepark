@@ -41,32 +41,34 @@ input, textarea {
     border: none;
 }
 
-/* input[type='date'], input[type='time'] {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row-reverse;
-    gap: 0.5rem;
-} */
-input[type='date']::-webkit-calendar-picker-indicator {
-    background: url("../images/calendar.svg") no-repeat;
-    background-size: contain;
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="date"]::-webkit-inner-spin-button
+ {
+    display: none;
+    -webkit-appearance: none;
 }
-input[type='time']::-webkit-calendar-picker-indicator {
-    background: url("../images/clock.svg") no-repeat;
-    background-size: contain;
+input[type="date"]::-moz-calendar-picker-indicator {
+    display: none;
 }
-
-input[type='date']:focus::-webkit-calendar-picker-indicator,
-input[type='date']:active::-webkit-calendar-picker-indicator {
-    background: url("../images/calendar-active.svg") no-repeat;
-    background-size: contain;
+input[type="date"]::-ms-clear {
+    display: none;
+    height: 0;
+    width: 0;
 }
 
-input[type='time']:focus::-webkit-calendar-picker-indicator,
-input[type='time']:active::-webkit-calendar-picker-indicator {
-    background: url("../images/clock-active.svg") no-repeat;
-    background-size: contain;
+input[type="time"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-inner-spin-button
+ {
+    -webkit-appearance: none;
+    display: none;
+}
+input[type="time"]::-moz-calendar-picker-indicator {
+    display: none;
+}
+input[type="time"]::-ms-clear {
+    display: none;
+    width: 0;
+    height: 0;
 }
 
 .container {
@@ -195,8 +197,8 @@ input[type='time']:active::-webkit-calendar-picker-indicator {
     -ms-border-radius: 0.25rem;
     -o-border-radius: 0.25rem;
     padding-left: 0.5rem;
-    outline: none;
     /* padding-right: 0.5rem; */
+    outline: none;
 }
 
 /* #checkoutSection .close-btn {
@@ -219,13 +221,6 @@ input[type='time']:active::-webkit-calendar-picker-indicator {
     background: #F4F4F4;
     margin-bottom: 1rem;
 }
-
-/* #checkoutSection .actions, #parkinglotOrderForm footer {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-} */
 
 #checkoutSection .action {
     display: flex;
@@ -294,7 +289,9 @@ input[type='time']:active::-webkit-calendar-picker-indicator {
 .form-control:focus, 
 .form-control:active, 
 .custom-select-wrapper:has(input[type='checkbox']:checked),
-#carSpot:focus {
+.park-input-container:has(input:focus),
+#carSpot:focus, 
+#carSpot:active {
     -webkit-box-shadow: 0px 1px 3px 0px #3277D8;
     -moz-box-shadow: 0px 1px 3px 0px #3277D8;
     box-shadow: 0px 1px 3px 0px #3277D8;
@@ -309,8 +306,16 @@ input[type='time']:active::-webkit-calendar-picker-indicator {
 }
 
 .parking-time-form-row {
+    /* display: -webkit-box;
+    display: -ms-flexbox; */
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
+    /* -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between; */
+    /* -webkit-box-align: start;
+    -ms-flex-align: start; */
+    align-items: start;
     grid-gap: 0.75rem;
 }
 
@@ -323,6 +328,25 @@ input[type='time']:active::-webkit-calendar-picker-indicator {
 .park-end-form-group {
    grid-column: span 1 / span 1;
 }
+.park-input-container {
+    display: flex;
+    align-items: center;
+    /* padding: 0;
+    padding-left: 0.25rem; */
+    gap: 0.25rem;
+}
+
+#parkStart, #parkingDate, #parkEnd {
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+    text-align: right;
+}
+
 .custom-select-wrapper{
     display: flex;
     align-items: center;
@@ -390,25 +414,38 @@ input[type='time']:active::-webkit-calendar-picker-indicator {
 
 /* @media screen and (max-width: 640px) {
 
-    input[type="date"]::before {
+    input[type='date']::-webkit-calendar-picker-indicator, 
+    input[type='time']::-webkit-calendar-picker-indicator 
+    {
+        background: none;
+    }
+
+    input[type='date']::before, 
+    input[type='time']::before {
         color: #203D65;
-        content: attr(placeholder);
+        content: attr(data-placeholder);
         margin-right: 3px;
     }
 
-    input[type="date"]:focus::before{
-        content: attr(placeholder) !important;
+    input[type='date']:focus::before, 
+    input[type='time']:focus:before {
+        content: attr(data-placeholder) !important;
     }
 
-    input[type="date"].has-value:focus::before{
+    input[type='date'].has-value:focus::before, 
+    input[type='time'].has-value:focus::before{
         content: none !important;
     }
-    input[type="date"].has-value::before{
+    input[type='date'].has-value::before,
+    input[type='time'].has-value::before{
         content: none !important;
     }
 
-    input[type="date"] {
+    input[type='date'], input[type='time'] {
         display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.25rem;
     }
     
 } */

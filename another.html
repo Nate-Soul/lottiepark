@@ -1,0 +1,132 @@
+<div class="form-row parking-time-form-row">
+    <div class="form-group parking-date-form-group">
+        <label for="parkingDate" class="form-label">Date</label>
+        <div class="park-input-container">
+            <input type="date" name="parking_date" id="parkingDate" class="form-control">
+            <div class="custom-time-input form-control">
+                <img src="./assets/images/calendar.svg" width="16" height="16" alt="">
+                <span>mm / dd / yy</span>
+            </div>
+        </div>
+    </div>
+    <div class="form-group park-start-form-group">
+        <label for="parkStart" class="form-label">Time In</label>
+        <div class="park-input-container">
+            <input type="time" name="park_start" id="parkStart" class="form-control">
+            <div class="custom-time-input form-control">
+                <img src="./assets/images/clock.svg" width="16" height="16" alt="">
+                <span>00:00</span>
+            </div>
+        </div>
+    </div>
+    <div class="form-group park-end-form-group">
+        <label for="parkEnd" class="form-label">Time Out</label>
+        <div class="park-input-container">
+            <input type="time" name="park_end" id="parkEnd" class="form-control">
+            <div class="custom-time-input form-control">
+                <img src="./assets/images/clock.svg" width="16" height="16" alt="">
+                <span>00:00</span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="form-group estimated-duration-form-group">
+    <label class="form-label">What&apos;s Your Estimated Duration?</label>
+    <div class="horizontal-scroll">
+        <div class="form-row estimated-duration-form-row">
+            <div class="custom-select-wrapper">
+                <label class="custom-select">
+                    <input type="checkbox" name="estimated_duration" id="estimatedDuration1" value="20">
+                    1 - 2hrs
+                </label>
+                <span class="price">$20</span>
+            </div>
+            <div class="custom-select-wrapper">
+                <label class="custom-select">
+                    <input type="checkbox" name="estimated_duration" id="estimatedDuration2" value="40">
+                    2 - 3hrs
+                </label>
+                <span class="price">$40</span>
+            </div>
+            <div class="custom-select-wrapper">
+                <label class="custom-select">
+                    <input type="checkbox" name="estimated_duration" id="estimatedDuration3" value="60">
+                    3 - 4hrs
+                </label>
+                <span class="price">$60</span>
+            </div>
+            <div class="custom-select-wrapper">
+                <label class="custom-select">
+                    <input type="checkbox" name="estimated_duration" id="estimatedDuration4" value="80">
+                    4 - 5hrs
+                </label>
+                <span class="price">$80</span>
+            </div>
+            <div class="custom-select-wrapper">
+                <label class="custom-select">
+                    <input type="checkbox" name="estimated_duration" id="estimatedDuration5" value="100">
+                    5hrs+
+                </label>
+                <span class="price">$100</span>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    
+.parking-time-form-row {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-gap: 0.75rem;
+    align-items: start;
+}
+
+.parking-date-form-group {
+    grid-column: span 1 / span 1;
+}
+.park-start-form-group {
+    grid-column: span 1 / span 1;
+}
+.park-end-form-group {
+   grid-column: span 1 / span 1;
+}
+.park-input-container {
+    position: relative;
+}
+#parkingDate,
+#parkStart, 
+#parkEnd, 
+.custom-time-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+#parkStart, #parkEnd, #parkingDate {
+    z-index: 9;
+    opacity: 0;
+}
+#parkingDate::-webkit-calendar-picker-indicator,
+#parkStart::-webkit-calendar-picker-indicator,
+#parkEnd::-webkit-calendar-picker-indicator {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+}
+.custom-time-input {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.25rem;
+    width: 100%;
+    font-size: var(--font-size-sm);
+}
+</style>
+
+the nextElementSibling of ".parking-time-form-row" which is ".estimated-duration-form-group" is overlapping in the UI with ".parking-time-form-row" why is that?
