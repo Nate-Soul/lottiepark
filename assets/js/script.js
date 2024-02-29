@@ -1,34 +1,3 @@
-// const dateInputs = document.querySelectorAll("input[type='date']");
-
-// dateInputs.forEach(dateInput => {
-//     dateInput.addEventListener("input", () => {
-//         if (dateInput.value !== "") {
-//             dateInput.classList.add("has-value");
-//         } else {
-//             dateInput.classList.remove("has-value");
-//         }
-//     });
-// });
-// const timeInputs = document.querySelectorAll("input[type='time']");
-// timeInputs.forEach(timeInput => {
-//     timeInput.addEventListener("change", () => {
-//         const timeDisplay = timeInput.nextElementSibling.querySelector("span");
-//         timeDisplay.textContent = timeInput.value;
-//     });
-// });
-// const dateInputs = document.querySelectorAll("input[type='date']");
-// dateInputs.forEach(dateInput => {
-//     dateInput.addEventListener("input", () => {
-//         const dateDisplay = dateInput.nextElementSibling.querySelector("span");
-//         if (dateInput.value !== "") {
-//             dateDisplay.textContent = dateInput.value;
-//         } else {
-//             dateDisplay.textContent = "mm / dd / yy"
-//         }
-//     });
-// });
-
-
 const estimatedDurationCbs = document.getElementsByName("estimated_duration");
 
 estimatedDurationCbs.forEach(estimatedDurationCb => {
@@ -65,6 +34,8 @@ const updatePrice = (val, tag) => {
     totalPrice.setAttribute(`data-${tag}-price`, parseInt(val));
 }
 document.addEventListener("DOMContentLoaded", () => {
+
+    updateTotalPrice();
 
     estimatedDurationCbs.forEach(estimatedDurationCb => {
         estimatedDurationCb.addEventListener("change", () => {
