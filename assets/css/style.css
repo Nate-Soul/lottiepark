@@ -29,13 +29,18 @@ img {
     height: auto;
 }
 
-button, a[type='button'] {
+button, a[type='button'], input[type='button'] {
     border: none;
     outline: none;
     display: inline-flex;
     justify-content: center;
     align-items: center;
     gap: 0.5rem;
+    transition: all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -ms-transition: all .5s;
+    -o-transition: all .5s;
 }
 
 input, textarea {
@@ -199,8 +204,12 @@ input[type="time"]::-ms-clear {
     -ms-border-radius: 0.25rem;
     -o-border-radius: 0.25rem;
     padding-left: 0.5rem;
-    /* padding-right: 0.5rem; */
     outline: none;
+    transition: ease-in-out .5s;
+    -webkit-transition: ease-in-out .5s;
+    -moz-transition: ease-in-out .5s;
+    -ms-transition: ease-in-out .5s;
+    -o-transition: ease-in-out .5s;
 }
 
 #checkoutSection .actions {
@@ -211,6 +220,11 @@ input[type="time"]::-ms-clear {
     background: #F4F4F4;
     padding: 1.5rem 0;
     margin-bottom: 1rem;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
 }
 
 #checkoutSection .action {
@@ -273,6 +287,11 @@ input[type="time"]::-ms-clear {
     height: 3rem;
     color: #9695A8;
     width: 100%;
+    transition: ease-in-out .5s;
+    -webkit-transition: ease-in-out .5s;
+    -moz-transition: ease-in-out .5s;
+    -ms-transition: ease-in-out .5s;
+    -o-transition: ease-in-out .5s;
 }
 
 .form-control:hover,
@@ -377,7 +396,7 @@ input[type="time"]::-ms-clear {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 2rem;
+    gap: 1rem;
     background: #F3F4FF;
     padding: 2rem 0.5rem;
 }
@@ -401,12 +420,23 @@ input[type="time"]::-ms-clear {
     font-size: var(--font-size-lg);
 }
 
+.submit-btn:hover, .submit-btn:focus {
+    box-shadow: 0 0 4px 0px var(--primary-color);
+}
+
 .scanner {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5rem;
+    padding: 0.5rem 1.25rem;
     font-size: var(--font-size-md);
+    background-color: transparent;
+    border-radius: 0.25rem;
+    -webkit-border-radius: 0.25rem;
+    -moz-border-radius: 0.25rem;
+    -ms-border-radius: 0.25rem;
+    -o-border-radius: 0.25rem;
+}
+
+.scanner:hover, .scanner:focus {
+    box-shadow: 0 0 4px 0 rgba(0,0,0,0.6);
 }
 
 @media screen and (max-width: 378.98px) {
@@ -418,9 +448,8 @@ input[type="time"]::-ms-clear {
     }
     #parkinglotOrderForm footer {
         flex-direction: column;
-        gap: 1rem;
     }
-    .submit-btn {
+    .submit-btn, .scanner {
         width: 100%;
     }
 }
