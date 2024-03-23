@@ -93,8 +93,8 @@ input[type="time"]::-ms-clear {
 }
 
 #mainHeader {
-    padding-top: 1.5rem;
-    padding-bottom: 3.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 1.5rem;
     background: var(--primary-color);
     color: white;
 }
