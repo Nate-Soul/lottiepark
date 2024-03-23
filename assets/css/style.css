@@ -1,5 +1,9 @@
 :root {
-    --primary-color: #656CEE;
+    --primary-color: #132851;
+    --secondary-color: #2DB0D0;
+    --secondary-color-rgb: rgb(45, 176, 208);
+    --secondary-color-200: #0583B9;
+    --secondary-color-200-rgb: rgb(5, 131, 185);
     --text-color-1: #333E63;
     --text-color-2: #8498B4;
     --text-color-3: #A5AAB7;
@@ -91,7 +95,7 @@ input[type="time"]::-ms-clear {
 #mainHeader {
     padding-top: 2rem;
     padding-bottom: 4rem;
-    background: #333677;
+    background: var(--primary-color);
     color: white;
 }
 #mainHeader .container{
@@ -155,7 +159,7 @@ input[type="time"]::-ms-clear {
     padding-bottom: 1.5rem;
 }
 
-#checkoutSection header h2 {
+#checkoutSection header h1 {
     font-size: 1.5rem;
     font-weight: 700;
     color: #333E63;
@@ -399,11 +403,16 @@ input[type="time"]::-ms-clear {
     gap: 1rem;
     background: #F3F4FF;
     padding: 2rem 0.5rem;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
 }
 
 .submit-btn {
     padding: 0.5rem 1.25rem;
-    background: radial-gradient(100% 100% at 50% 0%, #FFBA82 0%, #FF8B2D 100%);
+    background: radial-gradient(100% 100% at 50% 0%, var(--secondary-color) 0%, var(--secondary-color-200) 100%);
     color: #ffffff;
     border-radius: 0.25rem;
     -webkit-border-radius: 0.25rem;
