@@ -151,6 +151,12 @@ input[type="time"]::-ms-clear {
     padding-bottom: 4rem;
 }
 
+.ticket-label {
+    font-size: large;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
 #checkoutSection header {
     display: flex;
     flex-direction: column;
@@ -330,7 +336,7 @@ input[type="time"]::-ms-clear {
     /* display: -webkit-box;
     display: -ms-flexbox; */
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     /* -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between; */
@@ -448,9 +454,36 @@ input[type="time"]::-ms-clear {
     box-shadow: 0 0 4px 0 rgba(0,0,0,0.6);
 }
 
+#mainFooter {
+    background-color: #132851;
+    color: white;
+    padding: 3rem 0;
+    text-align: center;
+}
+
+#mainFooter ul {
+    list-style: none;
+}
+
+#mainFooter .footer-social-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+#mainFooter a {
+    color: #9695A8;
+}
+
+#mainFooter a:hover {
+    color: #ffffff;
+}
+
 @media screen and (max-width: 378.98px) {
     .parking-time-form-row {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(1, minmax(0, 1fr));
     }
     .parking-date-form-group {
         grid-column: span 2 / span 2;
