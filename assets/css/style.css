@@ -162,7 +162,7 @@ input[type="time"]::-ms-clear {
 .label-container {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: start;
 }
 
 #checkoutSection .header-contents {
@@ -503,12 +503,12 @@ input[type="time"]::-ms-clear {
 }
 
 @media screen and (max-width: 378.98px) {
-    .parking-time-form-row {
+    /* .parking-time-form-row {
         grid-template-columns: repeat(1, minmax(0, 1fr));
-    }
-    .parking-date-form-group {
+    } */
+    /* .parking-date-form-group {
         grid-column: span 2 / span 2;
-    }
+    } */
     #parkinglotOrderForm footer {
         flex-direction: column;
     }
@@ -537,7 +537,7 @@ input[type="time"]::-ms-clear {
         flex-direction: column;
         align-items: start;
     }
-    .park-start-form-group, .park-end-form-group {
+    /* .park-start-form-group, .park-end-form-group {
         grid-column: span 2 / span 2;
-    }
+    } */
 }
