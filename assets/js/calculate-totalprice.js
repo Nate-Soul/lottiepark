@@ -1,28 +1,6 @@
-const estimatedDurationCbs = document.getElementsByName("estimated_duration");
-
-estimatedDurationCbs.forEach(estimatedDurationCb => {
-    estimatedDurationCb.addEventListener("change", () => {
-        estimatedDurationCbs.forEach(checkbox => {
-            if (estimatedDurationCb !== checkbox){
-                checkbox.checked = false;
-            }
-        });
-    });
-});
-
-const serviceCbs = document.getElementsByName("additional_services");
-
-serviceCbs.forEach(serviceCb => {
-    serviceCb.addEventListener("change", () => {
-        serviceCbs.forEach(checkbox => {
-            if (serviceCb !== checkbox){
-                checkbox.checked = false;
-            }
-        });
-    });
-});
-
 const totalPrice = document.querySelector("#totalPrice");
+const estimatedDurationCbs = document.getElementsByName("estimated_duration");
+const serviceCbs = document.getElementsByName("additional_services");
 
 const updateTotalPrice = () => {
     const durationPrice = parseInt(totalPrice.getAttribute("data-duration-price"));
@@ -33,7 +11,11 @@ const updateTotalPrice = () => {
 const updatePrice = (val, tag) => {
     totalPrice.setAttribute(`data-${tag}-price`, parseInt(val));
 }
+
 document.addEventListener("DOMContentLoaded", () => {
+
+    checkboxHandler(estimatedDurationCbs);
+    checkboxHandler(serviceCbs);
 
     updateTotalPrice();
 
@@ -52,5 +34,4 @@ document.addEventListener("DOMContentLoaded", () => {
             updateTotalPrice(serviceCb.value);
         });
     });
-
 });

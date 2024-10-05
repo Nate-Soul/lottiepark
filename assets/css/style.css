@@ -367,10 +367,10 @@ input[type="time"]::-ms-clear {
     grid-gap: 0.75rem;
 }
 
-.parking-date-form-group {
+.date-form-group {
     grid-column: span 1 / span 1;
 }
-.park-start-form-group {
+.time-form-group {
     grid-column: span 1 / span 1;
 }
 .park-end-form-group {
@@ -383,7 +383,7 @@ input[type="time"]::-ms-clear {
     overflow: hidden;
 }
 
-#parkStart, #parkingDate, #parkEnd {
+.date-form-group input, .time-form-group input {
     width: 100%;
     height: 100%;
     border-radius: 1rem;
@@ -506,7 +506,7 @@ input[type="time"]::-ms-clear {
     /* .parking-time-form-row {
         grid-template-columns: repeat(1, minmax(0, 1fr));
     } */
-    /* .parking-date-form-group {
+    /* .date-form-group {
         grid-column: span 2 / span 2;
     } */
     #parkinglotOrderForm footer {
@@ -537,7 +537,7 @@ input[type="time"]::-ms-clear {
         flex-direction: column;
         align-items: start;
     }
-    /* .park-start-form-group, .park-end-form-group {
+    /* .time-form-group, .park-end-form-group {
         grid-column: span 2 / span 2;
     } */
 }

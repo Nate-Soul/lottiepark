@@ -29,9 +29,14 @@
         <section id="checkoutSection">
             <div class="container">
                 <header>
-                    <h4 class="uppercase ticket-label">Weekly Pass</h4>
-                    <h1>Lottie Parking</h1>
-                    <p>234 East Alberta, Georgia Washington</p>
+                    <div class="label-container">
+                        <div class="header-contents">
+                            <h4 class="uppercase ticket-label">Weekly Pass</h4>
+                            <h1>Lottie Parking</h1>
+                            <p>234 East Alberta, Georgia Washington</p>
+                        </div>
+                        <img src="./assets/images/parking-gate-with-car-in-view.svg" width="80" height="80" alt="" class="">
+                    </div>
                     <div class="header-inner-actions">
                         <div class="header-inner-action">
                             <div class="header-inner-action-icon-wrapper">
@@ -91,30 +96,30 @@
                 </div>
                 <form action="#" id="parkinglotOrderForm">
                     <div class="form-row parking-time-form-row">
-                        <div class="form-group parking-date-form-group">
-                            <label for="parkingDate" class="form-label">Entry Date</label>
+                        <div class="form-group date-form-group">
+                            <label for="entryDate" class="form-label">Entry Date</label>
                             <div class="park-input-container form-control">
                                 <img src="./assets/images/calendar.svg" width="16" height="16" alt="">
-                                <input type="date" name="parking_date" id="parkingDate">
+                                <input type="date" name="entry_date" id="entryDate">
                             </div>
                         </div>
-                        <div class="form-group park-start-form-group">
-                            <label for="parkStart" class="form-label">Entry Time</label>
+                        <div class="form-group time-form-group">
+                            <label for="entryTime" class="form-label">Entry Time</label>
                             <div class="park-input-container form-control">
                                 <img src="./assets/images/clock.svg" width="16" height="16" alt="">
-                                <input type="time" name="park_start" id="parkStart">
+                                <input type="time" name="park_start" id="entryTime">
                             </div>
                         </div>
                     </div>
                     <div class="form-row parking-time-form-row">
-                        <div class="form-group parking-date-form-group">
+                        <div class="form-group date-form-group">
                             <label for="parkingDate" class="form-label">Exit Date</label>
                             <div class="park-input-container form-control">
                                 <img src="./assets/images/calendar.svg" width="16" height="16" alt="">
                                 <input type="date" name="parking_date" id="parkingDate">
                             </div>
                         </div>
-                        <div class="form-group park-start-form-group">
+                        <div class="form-group time-form-group">
                             <label for="parkStart" class="form-label">Exit Time</label>
                             <div class="park-input-container form-control">
                                 <img src="./assets/images/clock.svg" width="16" height="16" alt="">
